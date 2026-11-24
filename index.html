@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Sharma | Software Engineer &amp; AI/ML Developer &bull; Stark Protocol</title>
+  
+  <meta name="description" content="Cinematic Stark-inspired developer portfolio of Aditya Sharma. Software Engineer & AI/ML Developer, B.Tech CSE (AI & ML) 2nd Year at Lucknow.">
+  <meta name="author" content="Aditya Sharma">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Orbitron, Space Grotesk, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       CINEMATIC BACKGROUND VIDEO & VIGNETTE OVERLAY
+       ====================================================================== -->
+  <div class="video-bg-container" aria-hidden="true">
+    <video 
+      id="bg-ironman-video" 
+      src="assets/ironman.mp4" 
+      playsinline 
+      muted 
+      preload="auto" 
+      loop
+    ></video>
+    <div class="video-vignette-overlay"></div>
+    <div class="hud-scanlines"></div>
+    <div class="hud-laser-sweep"></div>
+  </div>
+
+  <!-- ======================================================================
+       PRELOADER — ARC REACTOR CORE INITIALIZATION
+       ====================================================================== -->
+  <div class="stark-preloader" id="stark-preloader" aria-label="Initializing Stark HUD">
+    <div class="reactor-loader">
+      <div class="reactor-ring-outer"></div>
+      <div class="reactor-ring-middle"></div>
+      <div class="reactor-ring-inner"></div>
+      <div class="reactor-core-symbol"></div>
+    </div>
+    <div class="preloader-status">INITIALIZING J.A.R.V.I.S. PROTOCOL...</div>
+    <div class="preloader-counter" id="preloader-counter">SYSTEM BOOT: 0%</div>
+  </div>
+
+  <!-- ======================================================================
+       NAVIGATION — STARK HUD TOP BAR
+       ====================================================================== -->
+  <header class="hud-nav" id="hud-nav" role="banner">
+    <div class="nav-container">
+      <a href="#hero" class="brand-stark" aria-label="Aditya Sharma Home">
+        <div class="arc-logo">
+          <div class="arc-inner-triangle"></div>
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-name">ADITYA SHARMA</span>
+          <span class="brand-system">MARK LXXXV // ONLINE</span>
+        </div>
+      </a>
+
+      <nav role="navigation" aria-label="Stark Systems Navigation">
+        <ul class="nav-menu-links">
+          <li><a href="#about" class="hud-nav-link">ORIGIN</a></li>
+          <li><a href="#skills" class="hud-nav-link">ARSENAL</a></li>
+          <li><a href="#projects" class="hud-nav-link">HALL OF ARMOR</a></li>
+          <li><a href="#journey" class="hud-nav-link">MISSION LOG</a></li>
+          <li><a href="#contact" class="hud-nav-link">COMMS</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-hud-controls">
+        <!-- Audio / Suit Sound FX Toggle -->
+        <button class="btn-sound-toggle" id="btn-sound-toggle" title="Toggle Background Audio / Sound FX">
+          <div class="audio-eq-bars">
+            <span></span><span></span><span></span>
+          </div>
+          <span id="audio-btn-label">AUDIO: OFF</span>
+        </button>
+
+        <button class="btn-hud-resume btn-open-resume">DOSSIER</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open HUD Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+    <!-- ======================================================================
+         1. HERO SECTION (SCENE: IRON MAN SUPERHERO LANDING & HUD BOOT)
+         ====================================================================== -->
+    <section class="hero-stark-section" id="hero">
+      <div class="container hero-stark-grid">
+        <div class="hero-stark-content">
+          <div class="hud-status-badge">
+            <span class="pulse-arc-dot"></span>
+            <span>SYSTEMS NOMINAL // ARC REACTOR 100%</span>
+          </div>
+
+          <h1 class="hero-main-title">
+            <span class="crimson-grad">ADITYA SHARMA</span>
+          </h1>
+
+          <div class="hero-stark-role">
+            Software Engineer &bull; AI &amp; Machine Learning Developer
+          </div>
+
+          <p class="hero-stark-bio">
+            Second-year Computer Science &amp; Engineering student specializing in Artificial Intelligence and Machine Learning at Lucknow. Building high-performance software systems, intelligent algorithms, and modern digital architectures.
+          </p>
+
+          <div class="hero-stark-actions">
+            <a href="#projects" class="btn-stark-primary">
+              <span>EXPLORE WORK</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button class="btn-stark-secondary btn-open-resume">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>ACCESS DOSSIER</span>
+            </button>
+            <a href="#contact" class="btn-stark-secondary">
+              <span>COMMS RELAY</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Holographic Portrait Showcase -->
+        <div class="hero-hologram-card">
+          <div class="holo-portrait-frame stark-card">
+            <div class="reticle-circle"></div>
+            <div class="holo-scan-line"></div>
+            
+            <img 
+              src="assets/aditya.png" 
+              alt="Holographic Portrait of Aditya Sharma" 
+              class="aditya-portrait"
+              loading="eager"
+            >
+
+            <div class="holo-meta-dock">
+              <div>
+                <div class="name-title">Aditya Sharma</div>
+                <div class="status-label">AI &amp; ML Specialist &bull; 2nd Year</div>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--stark-gold);">
+                [ LUCKNOW, IN ]
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. STARK HUD STATS STRIP
+         ====================================================================== -->
+    <section class="container">
+      <div class="stark-stats-row">
+        <div class="stark-stat-box stark-card">
+          <div class="stat-metric">2nd Year</div>
+          <div class="stat-field">B.Tech CSE (AI &amp; ML)</div>
+          <div class="stat-sub">Lucknow, Uttar Pradesh</div>
+        </div>
+        <div class="stark-stat-box stark-card">
+          <div class="stat-metric">Python &bull; Java</div>
+          <div class="stat-field">Core Languages</div>
+          <div class="stat-sub">C, SQL &amp; Web Fundamentals</div>
+        </div>
+        <div class="stark-stat-box stark-card">
+          <div class="stat-metric">AI &amp; Neural</div>
+          <div class="stat-field">Primary Specialization</div>
+          <div class="stat-sub">Machine Learning &amp; AI Tools</div>
+        </div>
+        <div class="stark-stat-box stark-card">
+          <div class="stat-metric">Internship Ready</div>
+          <div class="stat-field">Mission Objective</div>
+          <div class="stat-sub">Seeking industry mentorship</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. ABOUT / ORIGIN SECTION
+         ====================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="hud-section-header">
+          <span class="hud-tag">// 01. PROTOCOL ORIGIN</span>
+          <h2 class="hud-section-title">ORIGIN &amp; <span class="glow-gold">MISSION OBJECTIVE</span></h2>
+          <p class="hud-section-desc">
+            Strong computational foundations combined with dedicated training in Artificial Intelligence and modern software engineering.
+          </p>
+        </div>
+
+        <div class="origin-grid">
+          <div>
+            <!-- Professional Summary Card -->
+            <div class="origin-card stark-card">
+              <h3>
+                <span style="color: var(--stark-crimson);">&bull;</span>
+                PROFESSIONAL SUMMARY
+              </h3>
+              <p>
+                Second-year B.Tech student in Computer Science &amp; Engineering with a specialization in Artificial Intelligence and Machine Learning. Skilled in <strong>Python, Java, C, SQL</strong>, and web fundamentals, with a strong interest in software development and emerging AI technologies.
+              </p>
+              <p>
+                Dedicated to solving complex engineering problems, mastering object-oriented design patterns, writing clean maintainable code, and turning academic concepts into real-world applications.
+              </p>
+            </div>
+
+            <!-- Career Objective Card -->
+            <div class="origin-card stark-card">
+              <h3>
+                <span style="color: var(--stark-gold);">&bull;</span>
+                CAREER OBJECTIVE
+              </h3>
+              <p style="font-style: italic; color: #f1f5f9; border-left: 2px solid var(--stark-gold); padding-left: 1rem;">
+                "To secure an internship or entry-level opportunity in technology where I can apply my academic knowledge, strengthen my programming and problem-solving skills, gain practical industry experience, and contribute to meaningful projects while continuously learning and growing."
+              </p>
+            </div>
+
+            <!-- Core Competencies -->
+            <div class="origin-card stark-card">
+              <h3>
+                <span style="color: var(--arc-cyan);">&bull;</span>
+                CORE COMPETENCY PILLARS
+              </h3>
+              <div class="core-pillars-grid">
+                <div class="pillar-item">
+                  <span class="pillar-bullet">&gt;</span>
+                  <div>
+                    <div class="pillar-name">Object-Oriented Programming</div>
+                    <div class="pillar-desc">Modular design, encapsulation, and robust architecture in Java &amp; Python.</div>
+                  </div>
+                </div>
+                <div class="pillar-item">
+                  <span class="pillar-bullet">&gt;</span>
+                  <div>
+                    <div class="pillar-name">Data Structures &amp; Algorithms</div>
+                    <div class="pillar-desc">Problem-solving, algorithmic efficiency, and Big-O computational analysis.</div>
+                  </div>
+                </div>
+                <div class="pillar-item">
+                  <span class="pillar-bullet">&gt;</span>
+                  <div>
+                    <div class="pillar-name">Relational Databases &amp; SQL</div>
+                    <div class="pillar-desc">Schema design, normalization, query optimization, and data modeling.</div>
+                  </div>
+                </div>
+                <div class="pillar-item">
+                  <span class="pillar-bullet">&gt;</span>
+                  <div>
+                    <div class="pillar-name">AI-Assisted Engineering</div>
+                    <div class="pillar-desc">Harnessing LLMs and generative tools to accelerate software workflows.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Technical Dossier Card -->
+          <div class="stark-dossier-card stark-card">
+            <div class="dossier-title">STARK DOSSIER &bull; SPECIFICATIONS</div>
+
+            <div class="dossier-item">
+              <span class="dossier-lbl">FULL NAME</span>
+              <span class="dossier-val">Aditya Sharma</span>
+            </div>
+
+            <div class="dossier-item">
+              <span class="dossier-lbl">CURRENT DEGREE</span>
+              <span class="dossier-val">Bachelor of Technology (B.Tech)</span>
+            </div>
+
+            <div class="dossier-item">
+              <span class="dossier-lbl">SPECIALIZATION</span>
+              <span class="dossier-val" style="color: var(--arc-cyan);">CSE (Artificial Intelligence &amp; ML)</span>
+            </div>
+
+            <div class="dossier-item">
+              <span class="dossier-lbl">ACADEMIC STATUS</span>
+              <span class="dossier-val">Currently Pursuing &bull; 2nd Year</span>
+            </div>
+
+            <div class="dossier-item">
+              <span class="dossier-lbl">CURRENT SECTOR</span>
+              <span class="dossier-val">Lucknow, Uttar Pradesh, India</span>
+            </div>
+
+            <div class="dossier-item">
+              <span class="dossier-lbl">DIRECT RELAY EMAIL</span>
+              <span class="dossier-val" style="color: var(--text-cyan); word-break: break-all;">mradityaraj84@gmail.com</span>
+            </div>
+
+            <div class="dossier-item">
+              <span class="dossier-lbl">PHONE</span>
+              <span class="dossier-val">+91 6389258526</span>
+            </div>
+
+            <div class="dossier-item">
+              <span class="dossier-lbl">LANGUAGES</span>
+              <span class="dossier-val">Hindi, English</span>
+            </div>
+
+            <div class="dossier-item">
+              <span class="dossier-lbl">MISSION READINESS</span>
+              <span class="dossier-val" style="color: var(--stark-gold);">Seeking Internship / Entry-Level Role</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. STARK ARSENAL / TECHNICAL SKILLS
+         ====================================================================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="hud-section-header">
+          <span class="hud-tag">// 02. STARK ARSENAL</span>
+          <h2 class="hud-section-title">TECHNICAL <span class="glow-gold">POWER MODULES</span></h2>
+          <p class="hud-section-desc">
+            Categorized technical capabilities, languages, AI/ML paradigms, and developer tooling.
+          </p>
+        </div>
+
+        <div class="arsenal-grid">
+          <!-- 1. Programming Languages -->
+          <div class="power-module-card stark-card">
+            <div class="module-header">
+              <div class="module-title-wrap">
+                <span class="module-icon">⚡</span>
+                <span class="module-name">Programming Languages</span>
+              </div>
+              <span class="module-load-tag">CORE DIALECTS</span>
+            </div>
+            <div class="power-pills-wrap">
+              <span class="power-pill core">Python</span>
+              <span class="power-pill core">Java</span>
+              <span class="power-pill core">C</span>
+              <span class="power-pill">C++</span>
+              <span class="power-pill">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- 2. AI & Machine Learning -->
+          <div class="power-module-card stark-card">
+            <div class="module-header">
+              <div class="module-title-wrap">
+                <span class="module-icon">🧠</span>
+                <span class="module-name">AI &amp; Machine Learning</span>
+              </div>
+              <span class="module-load-tag">SPECIALIZATION</span>
+            </div>
+            <div class="power-pills-wrap">
+              <span class="power-pill cyan">Machine Learning</span>
+              <span class="power-pill cyan">Artificial Intelligence</span>
+              <span class="power-pill">Neural Networks</span>
+              <span class="power-pill">AI-Assisted Coding</span>
+              <span class="power-pill">ChatGPT &amp; LLMs</span>
+            </div>
+          </div>
+
+          <!-- 3. Web Technologies -->
+          <div class="power-module-card stark-card">
+            <div class="module-header">
+              <div class="module-title-wrap">
+                <span class="module-icon">🌐</span>
+                <span class="module-name">Web Technologies</span>
+              </div>
+              <span class="module-load-tag">FRONTEND ARCH</span>
+            </div>
+            <div class="power-pills-wrap">
+              <span class="power-pill cyan">HTML5</span>
+              <span class="power-pill cyan">CSS3</span>
+              <span class="power-pill">Responsive Layouts</span>
+              <span class="power-pill">Frontend Design</span>
+              <span class="power-pill">React Fundamentals</span>
+            </div>
+          </div>
+
+          <!-- 4. Databases & Storage -->
+          <div class="power-module-card stark-card">
+            <div class="module-header">
+              <div class="module-title-wrap">
+                <span class="module-icon">🗄️</span>
+                <span class="module-name">Databases</span>
+              </div>
+              <span class="module-load-tag">DATA RELAYS</span>
+            </div>
+            <div class="power-pills-wrap">
+              <span class="power-pill core">SQL</span>
+              <span class="power-pill core">Database Fundamentals</span>
+              <span class="power-pill">Schema Design</span>
+              <span class="power-pill">Data Normalization</span>
+              <span class="power-pill">Relational Logic</span>
+            </div>
+          </div>
+
+          <!-- 5. Core Concepts -->
+          <div class="power-module-card stark-card">
+            <div class="module-header">
+              <div class="module-title-wrap">
+                <span class="module-icon">⚙️</span>
+                <span class="module-name">Core Computer Science</span>
+              </div>
+              <span class="module-load-tag">FOUNDATIONAL</span>
+            </div>
+            <div class="power-pills-wrap">
+              <span class="power-pill core">Object-Oriented Programming (OOP)</span>
+              <span class="power-pill core">Data Structures</span>
+              <span class="power-pill">Problem-Solving</span>
+              <span class="power-pill">Computer Fundamentals</span>
+              <span class="power-pill">Algorithm Design</span>
+            </div>
+          </div>
+
+          <!-- 6. Tools & Soft Skills -->
+          <div class="power-module-card stark-card">
+            <div class="module-header">
+              <div class="module-title-wrap">
+                <span class="module-icon">✨</span>
+                <span class="module-name">Tools &amp; Capabilities</span>
+              </div>
+              <span class="module-load-tag">CREATIVE &amp; SOFT</span>
+            </div>
+            <div class="power-pills-wrap">
+              <span class="power-pill cyan">Git &amp; GitHub</span>
+              <span class="power-pill cyan">Canva</span>
+              <span class="power-pill">Communication</span>
+              <span class="power-pill">Adaptability</span>
+              <span class="power-pill">Self-Learning</span>
+              <span class="power-pill">Teamwork</span>
+              <span class="power-pill">Time Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. HALL OF ARMOR / PROJECTS SHOWCASE
+         ====================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="hud-section-header">
+          <span class="hud-tag">// 03. HALL OF ARMOR</span>
+          <h2 class="hud-section-title">DEPLOYED <span class="glow-gold">PROJECTS &amp; BUILDS</span></h2>
+          <p class="hud-section-desc">
+            Production web platforms, AI content research, and developer systems.
+          </p>
+        </div>
+
+        <div class="projects-stark-grid">
+          <!-- Project 1: Tech & AI Content Initiative -->
+          <article class="hall-project-card stark-card">
+            <div class="project-hologram-viewport">
+              <img src="assets/project-neuralmatrix.svg" alt="Tech & AI Content Initiative" loading="lazy">
+            </div>
+            <div class="project-content-block">
+              <div class="project-mark-tag">MARK I // AI RESEARCH PLATFORM</div>
+              <h3 class="project-stark-name">Tech &amp; AI Content Platform Initiative</h3>
+              <p class="project-stark-desc">
+                Developing a technology-focused content platform centered on AI and emerging technologies. Researching AI tools, technology trends, content creation, and digital branding. Creating engaging, structured content to make complex technology topics accessible.
+              </p>
+              <div class="project-tech-badges">
+                <span class="power-pill cyan">AI Research</span>
+                <span class="power-pill">Emerging Tech</span>
+                <span class="power-pill">Digital Branding</span>
+                <span class="power-pill">Canva</span>
+              </div>
+              <a href="https://github.com/mradityaai" target="_blank" rel="noopener noreferrer" class="btn-stark-action">
+                <span>VIEW GITHUB REPOS</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: Personal Website Development -->
+          <article class="hall-project-card stark-card">
+            <div class="project-hologram-viewport">
+              <img src="assets/project-portfolio.svg" alt="Personal Website Development" loading="lazy">
+            </div>
+            <div class="project-content-block">
+              <div class="project-mark-tag">MARK II // WEB ENGINEERING</div>
+              <h3 class="project-stark-name">Personal Portfolio &amp; Systems Engine</h3>
+              <p class="project-stark-desc">
+                Built an interactive personal website using modern web architecture and AI-assisted coding tools. Worked directly with frontend and backend project files, developing practical hands-on knowledge of website structure, development workflows, and deployment concepts.
+              </p>
+              <div class="project-tech-badges">
+                <span class="power-pill core">HTML5</span>
+                <span class="power-pill core">CSS3</span>
+                <span class="power-pill">JavaScript</span>
+                <span class="power-pill">AI-Assisted Coding</span>
+                <span class="power-pill">Cinematic Video Scrubbing</span>
+              </div>
+              <a href="#hero" class="btn-stark-action">
+                <span>EXPLORE ENGINE</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. JOURNEY TIMELINE / MISSION LOGS
+         ====================================================================== -->
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="hud-section-header">
+          <span class="hud-tag">// 04. FLIGHT TRAJECTORY</span>
+          <h2 class="hud-section-title">ACADEMIC &amp; DEV <span class="glow-gold">MISSION LOGS</span></h2>
+          <p class="hud-section-desc">
+            Chronological milestones tracking progression from foundational science to specialized artificial intelligence.
+          </p>
+        </div>
+
+        <div class="mission-timeline-flow">
+          <!-- Mission 1: B.Tech -->
+          <div class="timeline-mission-item">
+            <div class="mission-arc-node"></div>
+            <div class="mission-content-box stark-card">
+              <div class="mission-top-row">
+                <div class="mission-title">Bachelor of Technology (B.Tech)</div>
+                <div class="mission-epoch">CURRENTLY PURSUING &bull; 2ND YEAR</div>
+              </div>
+              <div class="mission-location">
+                CSE (Artificial Intelligence &amp; Machine Learning) &bull; Lucknow, Uttar Pradesh
+              </div>
+              <p class="mission-log-text">
+                Enrolled in specialized B.Tech curriculum. Mastering Object-Oriented Programming (Java, Python), Data Structures, Algorithms, Relational Database Management Systems (SQL), Discrete Mathematics, and foundational Machine Learning models.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mission 2: CBSE XII -->
+          <div class="timeline-mission-item">
+            <div class="mission-arc-node"></div>
+            <div class="mission-content-box stark-card">
+              <div class="mission-top-row">
+                <div class="mission-title">Class XII, Senior Secondary</div>
+                <div class="mission-epoch">COMPLETED 2025</div>
+              </div>
+              <div class="mission-location">Central Board of Secondary Education (CBSE)</div>
+              <p class="mission-log-text">
+                Graduated with strong analytical grounding in Mathematics, Physics, and introductory computer science fundamentals, building the computational discipline for engineering.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mission 3: Internship Goal -->
+          <div class="timeline-mission-item">
+            <div class="mission-arc-node" style="border-color: var(--stark-gold); box-shadow: 0 0 10px var(--stark-gold);"></div>
+            <div class="mission-content-box stark-card" style="border-color: rgba(245, 158, 11, 0.4);">
+              <div class="mission-top-row">
+                <div class="mission-title">Industry Internship / Entry-Level Role</div>
+                <div class="mission-epoch" style="color: var(--stark-gold); background: rgba(245, 158, 11, 0.15);">TARGET HORIZON</div>
+              </div>
+              <div class="mission-location">Software Engineering &bull; AI/ML Roles</div>
+              <p class="mission-log-text">
+                Actively pursuing an internship or junior role to apply academic knowledge, write production-grade code, contribute to real-world projects, and grow under experienced engineering mentorship.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. CONTACT / STARK COMMS RELAY (END-CREDIT PROTOCOL)
+         ====================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="hud-section-header">
+          <span class="hud-tag">// 05. SECURE TRANSMISSION</span>
+          <h2 class="hud-section-title">STARK COMMS <span class="glow-gold">RELAY</span></h2>
+          <p class="hud-section-desc">
+            Initiate communication regarding internship roles, engineering opportunities, or technical collaborations.
+          </p>
+        </div>
+
+        <div class="comms-relay-grid">
+          <!-- Left: Direct Communication Channels -->
+          <div class="comms-channels-list">
+            <!-- Email -->
+            <div class="comms-channel-card stark-card">
+              <div class="channel-main-info">
+                <div class="channel-arc-icon">✉️</div>
+                <div>
+                  <div class="channel-protocol-lbl">PRIMARY RELAY EMAIL</div>
+                  <div class="channel-target-val">mradityaraj84@gmail.com</div>
+                </div>
+              </div>
+              <button class="btn-comms-copy" id="btn-copy-email">COPY</button>
+            </div>
+
+            <!-- Phone -->
+            <div class="comms-channel-card stark-card">
+              <div class="channel-main-info">
+                <div class="channel-arc-icon">📞</div>
+                <div>
+                  <div class="channel-protocol-lbl">DIRECT LINE</div>
+                  <div class="channel-target-val">+91 6389258526</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="comms-channel-card stark-card">
+              <div class="channel-main-info">
+                <div class="channel-arc-icon">📍</div>
+                <div>
+                  <div class="channel-protocol-lbl">HEADQUARTERS SECTOR</div>
+                  <div class="channel-target-val">Lucknow, Uttar Pradesh, India</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/adityasharma9701/" target="_blank" rel="noopener noreferrer" class="comms-channel-card stark-card">
+              <div class="channel-main-info">
+                <div class="channel-arc-icon" style="color: var(--arc-cyan);">👔</div>
+                <div>
+                  <div class="channel-protocol-lbl">PROFESSIONAL NETWORK</div>
+                  <div class="channel-target-val">adityasharma9701</div>
+                </div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--arc-cyan);">&rarr;</span>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/mradityaai" target="_blank" rel="noopener noreferrer" class="comms-channel-card stark-card">
+              <div class="channel-main-info">
+                <div class="channel-arc-icon" style="color: #ffffff;">💻</div>
+                <div>
+                  <div class="channel-protocol-lbl">CODE ARCHIVES</div>
+                  <div class="channel-target-val">@mradityaai</div>
+                </div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--arc-cyan);">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Right: Comms Transmission Terminal -->
+          <div class="comms-form-terminal stark-card">
+            <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 1.2rem;">
+              DISPATCH SECURE TRANSMISSION
+            </h3>
+            <form id="comms-form" autocomplete="off">
+              <div class="stark-input-group">
+                <label for="comms-name" class="stark-input-label">CALLSIGN / NAME</label>
+                <input type="text" id="comms-name" class="stark-input-field" placeholder="e.g. Recruiter / Collaborator" required>
+              </div>
+
+              <div class="stark-input-group">
+                <label for="comms-email" class="stark-input-label">CONTACT EMAIL</label>
+                <input type="email" id="comms-email" class="stark-input-field" placeholder="name@organization.com" required>
+              </div>
+
+              <div class="stark-input-group">
+                <label for="comms-message" class="stark-input-label">TRANSMISSION PAYLOAD</label>
+                <textarea id="comms-message" class="stark-input-field" placeholder="State your mission, opportunity, or collaboration details..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-stark-transmit" id="btn-stark-transmit">
+                <span>DISPATCH MESSAGE</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="stark-footer" role="contentinfo">
+    <div class="container footer-inner-content">
+      <div class="footer-brand-meta">
+        &copy; 2026 Aditya Sharma &bull; B.Tech CSE (AI &amp; ML) &bull; Lucknow, India<br>
+        <span style="color: var(--arc-cyan);">SYSTEM STATUS: ALL UNITS OPERATIONAL</span>
+      </div>
+
+      <div class="footer-hud-links">
+        <a href="https://github.com/mradityaai" target="_blank" rel="noopener noreferrer">[ GITHUB ]</a>
+        <a href="https://www.linkedin.com/in/adityasharma9701/" target="_blank" rel="noopener noreferrer">[ LINKEDIN ]</a>
+        <a href="mailto:mradityaraj84@gmail.com">[ EMAIL ]</a>
+        <a href="#hero">[ TOP &uarr; ]</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       STARK DOSSIER MODAL (CURRICULUM VITAE)
+       ====================================================================== -->
+  <div class="dossier-modal-overlay" id="dossier-modal" role="dialog" aria-modal="true" aria-labelledby="dossier-modal-title">
+    <div class="dossier-modal-window">
+      <div class="dossier-modal-header">
+        <h3 class="dossier-modal-title" id="dossier-modal-title">PERSONNEL DOSSIER &bull; ADITYA SHARMA</h3>
+        <button class="dossier-close-btn" id="dossier-close-btn" aria-label="Close Dossier">&times;</button>
+      </div>
+
+      <div class="dossier-modal-body">
+        <div class="dossier-document">
+          <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1rem;">
+            <h2 style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: #ffffff;">ADITYA SHARMA</h2>
+            <div style="color: var(--arc-cyan); font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; margin-top: 0.2rem;">
+              B.Tech Computer Science &amp; Engineering (AI &amp; Machine Learning)
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+              Lucknow, Uttar Pradesh, India &bull; Phone: +91 6389258526 &bull; Email: mradityaraj84@gmail.com<br>
+              LinkedIn: linkedin.com/in/adityasharma9701 &bull; GitHub: github.com/mradityaai
+            </div>
+          </div>
+
+          <div class="dossier-sec-header">PROFESSIONAL SUMMARY</div>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65;">
+            Second-year B.Tech student in Computer Science &amp; Engineering with a specialization in Artificial Intelligence and Machine Learning. Skilled in Python, Java, C, SQL, and web fundamentals, with a strong interest in software development and emerging AI technologies. Seeking an internship or entry-level role to apply academic knowledge, contribute to real-world projects, and grow under industry mentorship.
+          </p>
+
+          <div class="dossier-sec-header">EDUCATION</div>
+          <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            <div style="display: flex; justify-content: space-between; color: #ffffff; font-weight: 600;">
+              <span>Bachelor of Technology (B.Tech), CSE (AI &amp; ML)</span>
+              <span style="color: var(--stark-gold);">Currently Pursuing, 2nd Year</span>
+            </div>
+            <div>Lucknow, Uttar Pradesh</div>
+            <div style="display: flex; justify-content: space-between; color: #ffffff; font-weight: 600; margin-top: 0.8rem;">
+              <span>Class XII, CBSE</span>
+              <span style="color: var(--stark-gold);">Completed 2025</span>
+            </div>
+          </div>
+
+          <div class="dossier-sec-header">TECHNICAL SKILLS</div>
+          <div style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.7;">
+            <div><strong style="color: #ffffff;">Programming Languages:</strong> Python, Java, C</div>
+            <div><strong style="color: #ffffff;">Web Technologies:</strong> HTML, CSS</div>
+            <div><strong style="color: #ffffff;">Databases:</strong> SQL, Database Fundamentals</div>
+            <div><strong style="color: #ffffff;">AI &amp; Productivity Tools:</strong> ChatGPT, AI-Assisted Coding Tools</div>
+            <div><strong style="color: #ffffff;">Design &amp; Content Tools:</strong> Canva</div>
+            <div><strong style="color: #ffffff;">Core Concepts:</strong> Object-Oriented Programming (OOP), Data Structures, Problem-Solving, Computer Fundamentals</div>
+          </div>
+
+          <div class="dossier-sec-header">PROJECTS &amp; INITIATIVES</div>
+          <div style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.65;">
+            <div style="color: #ffffff; font-weight: 600;">Personal Website Development</div>
+            <div>Built a personal website using AI-assisted coding tools. Worked with frontend and backend project files. Gained hands-on knowledge of website structure, development workflows, and deployment concepts.</div>
+            <div style="color: #ffffff; font-weight: 600; margin-top: 0.8rem;">Tech &amp; AI Content Initiative</div>
+            <div>Developing a technology-focused content platform centered on AI and emerging technologies. Researching AI tools, technology trends, content creation, and digital branding. Creating engaging content to make complex technology topics accessible.</div>
+          </div>
+
+          <div class="dossier-sec-header">CAREER OBJECTIVE</div>
+          <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.65;">
+            To secure an internship or entry-level opportunity in technology where I can apply my academic knowledge, strengthen my programming and problem-solving skills, gain practical industry experience, and contribute to meaningful projects while continuously learning and growing.
+          </p>
+
+          <div class="dossier-sec-header">SOFT SKILLS &amp; LANGUAGES</div>
+          <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.65;">
+            <strong style="color: #ffffff;">Soft Skills:</strong> Communication, Adaptability, Self-Learning, Creative Thinking, Teamwork, Time Management, Problem-Solving.<br>
+            <strong style="color: #ffffff;">Languages:</strong> Hindi, English.
+          </p>
+        </div>
+      </div>
+
+      <div class="dossier-modal-footer">
+        <a href="mailto:mradityaraj84@gmail.com?subject=Internship%20Inquiry%20-%20Aditya%20Sharma" class="btn-stark-primary" style="padding: 0.5rem 1.4rem; font-size: 0.8rem;">
+          EMAIL ADITYA
+        </a>
+        <button onclick="window.print()" class="btn-stark-secondary" style="padding: 0.5rem 1.4rem; font-size: 0.8rem;">
+          PRINT / SAVE PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
